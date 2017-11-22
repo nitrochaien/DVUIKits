@@ -80,16 +80,20 @@ extension ImageObjectDetectionViewController: UINavigationControllerDelegate {
   func detectScene(_ image: CIImage) {
     answerLabel.text = "Detecting Scene..."
     
-    guard let model = try? VNCoreMLModel(for: MobileNet().model) else { return }
-    
-    let request = VNCoreMLRequest(model: model) { (req, err) in
-      guard let results = req.results as? [VNClassificationObservation], let topResult = results.first else { return }
-      let article = self.vowels.contains(topResult.identifier.first!) ? "an" : "a"
-      DispatchQueue.main.async {
-        self.answerLabel.text = "\(Int(topResult.confidence * 100))% it's \(article) \(topResult.identifier)"
-      }
+    if #available(iOS 11.0, *) {
+        guard let model = try? VNCoreMLModel(for: MobileNet().model) else { return }
+        
+        let request = VNCoreMLRequest(model: model) { (req, err) in
+            guard let results = req.results as? [VNClassificationObservation], let topResult = results.first else { return }
+            let article = self.vowels.contains(topResult.identifier.first!) ? "an" : "a"
+            DispatchQueue.main.async {
+                self.answerLabel.text = "\(Int(topResult.confidence * 100))% it's \(article) \(topResult.identifier)"
+            }
+        }
+        
+        try? VNImageRequestHandler(ciImage: image, options: [:]).perform([request])
+    } else {
+        // Fallback on earlier versions
     }
-    
-    try? VNImageRequestHandler(ciImage: image, options: [:]).perform([request])
   }
 }

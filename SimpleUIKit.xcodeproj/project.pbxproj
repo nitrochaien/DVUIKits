@@ -45,8 +45,8 @@
 		EDA1371E1FC4818B0050FC9B /* PickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA136FB1FC4818B0050FC9B /* PickerCell.swift */; };
 		EDA1371F1FC4818B0050FC9B /* SSFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA136FC1FC4818B0050FC9B /* SSFile.swift */; };
 		EDA137201FC4818B0050FC9B /* dota2_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EDA136FE1FC4818B0050FC9B /* dota2_logo.png */; };
-		EDA137211FC4818B0050FC9B /* SampleTableStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDA136FF1FC4818B0050FC9B /* SampleTableStoryboard.storyboard */; };
 		EDA137221FC4818B0050FC9B /* SampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA137001FC4818B0050FC9B /* SampleTableViewController.swift */; };
+		F6AB9A511FC56A5500B6C568 /* MapKit+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AB9A501FC56A5500B6C568 /* MapKit+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,8 +113,8 @@
 		EDA136FB1FC4818B0050FC9B /* PickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerCell.swift; sourceTree = "<group>"; };
 		EDA136FC1FC4818B0050FC9B /* SSFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSFile.swift; sourceTree = "<group>"; };
 		EDA136FE1FC4818B0050FC9B /* dota2_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dota2_logo.png; sourceTree = "<group>"; };
-		EDA136FF1FC4818B0050FC9B /* SampleTableStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SampleTableStoryboard.storyboard; sourceTree = "<group>"; };
 		EDA137001FC4818B0050FC9B /* SampleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTableViewController.swift; sourceTree = "<group>"; };
+		F6AB9A501FC56A5500B6C568 /* MapKit+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapKit+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,22 +185,23 @@
 		EDA136A51FC4815B0050FC9B /* SimpleUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				EDA136A61FC4815B0050FC9B /* AppDelegate.swift */,
+				EDA136AD1FC4815B0050FC9B /* Assets.xcassets */,
 				EDA136F21FC4818A0050FC9B /* FacialRecognition */,
 				EDA136D71FC4818A0050FC9B /* HidingNavigationBar */,
 				EDA136EF1FC4818A0050FC9B /* Image */,
 				EDA136F61FC4818B0050FC9B /* ImagePicker */,
 				EDA136E31FC4818A0050FC9B /* InfiniteScrollingView */,
+				EDA136B21FC4815B0050FC9B /* Info.plist */,
+				EDA136AF1FC4815B0050FC9B /* LaunchScreen.storyboard */,
+				EDA136AA1FC4815B0050FC9B /* Main.storyboard */,
 				EDA136E61FC4818A0050FC9B /* MapKit */,
 				EDA136F41FC4818B0050FC9B /* MotionEffect */,
 				EDA136DA1FC4818A0050FC9B /* ObjectDetection */,
 				EDA136D41FC4818A0050FC9B /* Popover */,
 				EDA136FD1FC4818B0050FC9B /* TableView */,
-				EDA136A61FC4815B0050FC9B /* AppDelegate.swift */,
+				F6AB9A4F1FC56A3800B6C568 /* Utils */,
 				EDA136A81FC4815B0050FC9B /* ViewController.swift */,
-				EDA136AA1FC4815B0050FC9B /* Main.storyboard */,
-				EDA136AD1FC4815B0050FC9B /* Assets.xcassets */,
-				EDA136AF1FC4815B0050FC9B /* LaunchScreen.storyboard */,
-				EDA136B21FC4815B0050FC9B /* Info.plist */,
 			);
 			path = SimpleUIKit;
 			sourceTree = "<group>";
@@ -319,10 +320,17 @@
 			isa = PBXGroup;
 			children = (
 				EDA136FE1FC4818B0050FC9B /* dota2_logo.png */,
-				EDA136FF1FC4818B0050FC9B /* SampleTableStoryboard.storyboard */,
 				EDA137001FC4818B0050FC9B /* SampleTableViewController.swift */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		F6AB9A4F1FC56A3800B6C568 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F6AB9A501FC56A5500B6C568 /* MapKit+Ext.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -437,7 +445,6 @@
 			files = (
 				EDA137161FC4818B0050FC9B /* Image.storyboard in Resources */,
 				EDA136B11FC4815B0050FC9B /* LaunchScreen.storyboard in Resources */,
-				EDA137211FC4818B0050FC9B /* SampleTableStoryboard.storyboard in Resources */,
 				EDA137071FC4818B0050FC9B /* ImageDetect.storyboard in Resources */,
 				EDA137131FC4818B0050FC9B /* ScrollableBottomSheetViewController.xib in Resources */,
 				EDA137101FC4818B0050FC9B /* map.storyboard in Resources */,
@@ -536,6 +543,7 @@
 				EDA137061FC4818B0050FC9B /* GoogLeNetPlaces.mlmodel in Sources */,
 				EDA1370F1FC4818B0050FC9B /* BottomSheetViewController.swift in Sources */,
 				EDA137171FC4818B0050FC9B /* ImageViewController.swift in Sources */,
+				F6AB9A511FC56A5500B6C568 /* MapKit+Ext.swift in Sources */,
 				EDA137181FC4818B0050FC9B /* FacialRecogViewController.swift in Sources */,
 				EDA1371E1FC4818B0050FC9B /* PickerCell.swift in Sources */,
 				EDA1371D1FC4818B0050FC9B /* InitialPickerController.swift in Sources */,
@@ -717,8 +725,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UD98N48YL7;
+				DEVELOPMENT_TEAM = 4D947669QT;
 				INFOPLIST_FILE = SimpleUIKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = namdv.self.SimpleUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -733,8 +742,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UD98N48YL7;
+				DEVELOPMENT_TEAM = 4D947669QT;
 				INFOPLIST_FILE = SimpleUIKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = namdv.self.SimpleUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";

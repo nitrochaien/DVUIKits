@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 
+let kDefaultSpanLevel = 0.01
+
 class MapController: UIViewController
 {
     @IBOutlet var mMapView: MKMapView!
@@ -26,6 +28,17 @@ class MapController: UIViewController
     {
         super.viewDidLoad()
         
+        setupMapView()
+        initTableView()
+        initSearchBar()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        addBottomSheetView(false)
+    }
+    
+    func setupMapView() {
         locationManager.delegate = self
         //set accuracy to best
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -42,17 +55,49 @@ class MapController: UIViewController
             locationManager.startUpdatingLocation()
         }
         
-        initTableView()
-        initSearchBar()
+        addTrackUserLocationButton()
+        addMapTapGesture()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        addBottomSheetView(false)
+    func addTrackUserLocationButton() {
+//        let buttonItem = MKUserTrackingBarButtonItem(mapView: mMapView)
+//        navigationItem.leftBarButtonItem = buttonItem
+        
+        if #available(iOS 11.0, *) {
+            let buttonTrack = MKUserTrackingButton(mapView: mMapView)
+            buttonTrack.translatesAutoresizingMaskIntoConstraints = false
+            buttonTrack.backgroundColor = .white
+            buttonTrack.layer.shadowOpacity = 0.3
+            buttonTrack.layer.shadowRadius = 10
+            buttonTrack.layer.cornerRadius = 3 //magical number lmao
+            
+            mMapView.addSubview(buttonTrack)
+            
+            mMapView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[buttonTrack]-16-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: [:], views: ["buttonTrack" : buttonTrack]))
+            mMapView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[buttonTrack]-16-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: [:], views: ["buttonTrack" : buttonTrack]))
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
-    func addBottomSheetView(_ scrollable: Bool? = true) {
-        let bottomSheetVC = scrollable! ? ScrollableBottomSheetViewController() : BottomSheetViewController()
+    func addMapTapGesture() {
+        let longPressGesture = UILongPressGestureRecognizer()
+        longPressGesture.minimumPressDuration = 0.2
+        longPressGesture.addTarget(self, action: #selector(onMarkLocation))
+        mMapView.addGestureRecognizer(longPressGesture)
+    }
+    
+    @objc func onMarkLocation(_ gesture: UIGestureRecognizer) {
+        if gesture.state != .began { return }
+        
+        let touchPoint = gesture.location(in: mMapView)
+        let location = mMapView.convert(touchPoint, toCoordinateFrom: mMapView)
+        let placemark = MKPlacemark(coordinate: location)
+        dropPinZoomIn(placemark: placemark)
+    }
+    
+    func addBottomSheetView(_ scrollable: Bool = true) {
+        let bottomSheetVC = scrollable ? ScrollableBottomSheetViewController() : BottomSheetViewController()
         
         self.addChildViewController(bottomSheetVC)
         self.view.addSubview(bottomSheetVC.view)
@@ -93,16 +138,19 @@ class MapController: UIViewController
         mSelectedPin = placemark
         // clear existing pins
         mMapView.removeAnnotations(mMapView.annotations)
+        
+        guard let location = placemark.location else { return }
+        
         let annotation = MKPointAnnotation()
-        annotation.coordinate = (placemark.location?.coordinate)!
+        annotation.coordinate = location.coordinate
         annotation.title = placemark.name
         if let city = placemark.locality,
             let state = placemark.administrativeArea {
             annotation.subtitle = "\(city) \(state)"
         }
         mMapView.addAnnotation(annotation)
-        let span = MKCoordinateSpanMake(0.05, 0.05)
-        let region = MKCoordinateRegionMake((placemark.location?.coordinate)!, span)
+        let span = MKCoordinateSpanMake(kDefaultSpanLevel, kDefaultSpanLevel)
+        let region = MKCoordinateRegionMake(location.coordinate, span)
         mMapView.setRegion(region, animated: true)
     }
 }

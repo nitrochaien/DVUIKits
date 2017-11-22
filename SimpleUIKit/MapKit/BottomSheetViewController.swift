@@ -8,11 +8,13 @@
 
 import UIKit
 
+let screenHeight = UIScreen.main.bounds.height
+
 class BottomSheetViewController: UIViewController {
 
     let fullView: CGFloat = 100
     var partialView: CGFloat {
-        return UIScreen.main.bounds.height - (30 + UIApplication.shared.statusBarFrame.height)
+        return screenHeight - 150
     }
     
     override func viewDidLoad() {
@@ -37,8 +39,7 @@ class BottomSheetViewController: UIViewController {
         
         UIView.animate(withDuration: 0.3) {
             let frame = self.view.frame
-            let yComponent = UIScreen.main.bounds.height - 200
-            self.view.frame = CGRect.init(x: 0, y: yComponent, width: frame.width, height: frame.height)
+            self.view.frame = CGRect(x: 0, y: screenHeight, width: frame.width, height: frame.height)
         }
     }
     

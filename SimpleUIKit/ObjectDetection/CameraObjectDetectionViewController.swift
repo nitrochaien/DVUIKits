@@ -54,18 +54,22 @@ class CameraObjectDetectionViewController: UIViewController, AVCaptureVideoDataO
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
-        guard let model = try? VNCoreMLModel(for: SqueezeNet().model) else { return }
-        let request = VNCoreMLRequest(model: model) { (req, err) in
-            guard let result = req.results as? [VNClassificationObservation] else { return }
-            
-            guard let firstObservation = result.first else { return }
-            let resultString = "\(firstObservation.identifier)\t\(Int(firstObservation.confidence * 100))%"
-            print(resultString)
-            
-            DispatchQueue.main.async {
-                self.label.text = resultString
+        if #available(iOS 11.0, *) {
+            guard let model = try? VNCoreMLModel(for: SqueezeNet().model) else { return }
+            let request = VNCoreMLRequest(model: model) { (req, err) in
+                guard let result = req.results as? [VNClassificationObservation] else { return }
+                
+                guard let firstObservation = result.first else { return }
+                let resultString = "\(firstObservation.identifier)\t\(Int(firstObservation.confidence * 100))%"
+                print(resultString)
+                
+                DispatchQueue.main.async {
+                    self.label.text = resultString
+                }
             }
+            try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
+        } else {
+            // Fallback on earlier versions
         }
-        try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
     }
 }

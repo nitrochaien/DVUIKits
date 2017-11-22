@@ -15,7 +15,10 @@ class InfiniteScrollingViewController: UIViewController {
         
         edgesForExtendedLayout = []
         
-        let infiniteScrollView = InfiniteScrollView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 200), collectionViewLayout: UICollectionViewFlowLayout())
+        let width = UIScreen.main.bounds.width
+        let height = width * 9 / 16
+        
+        let infiniteScrollView = InfiniteScrollView(frame: CGRect(x: 0, y: 0, width: width, height: height), collectionViewLayout: UICollectionViewFlowLayout())
         infiniteScrollView.backgroundColor = .green
         infiniteScrollView.setData(["https://cdn.mmos.com/wp-content/uploads/2015/09/685patchdota2.jpg",
                                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUSNDue2gOaUL3JgoN3o8ch-Yd0l_ZP7vbwV8IuPUvrSsTKibXfQ",
