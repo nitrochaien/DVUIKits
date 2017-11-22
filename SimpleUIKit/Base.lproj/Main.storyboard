@@ -58,21 +58,73 @@
                                     <action selector="onClickSimpleTableView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hxz-IS-Bx7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTD-CU-h8Y">
+                                <rect key="frame" x="8" y="224" width="359" height="30"/>
+                                <color key="backgroundColor" red="0.50980392159999999" green="0.56078431370000004" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="ImagePicker">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickImagePicker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SKR-Zz-Lix"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBs-B6-2Fe">
+                                <rect key="frame" x="8" y="262" width="359" height="30"/>
+                                <color key="backgroundColor" red="0.50980392159999999" green="0.56078431370000004" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Facial Recognition">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickFacialRecognition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sBx-yR-DYJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTt-uy-tet">
+                                <rect key="frame" x="8" y="300" width="359" height="30"/>
+                                <color key="backgroundColor" red="0.50980392159999999" green="0.56078431370000004" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Image With Zoom">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickImageWithZoom:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4TF-6p-14h"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2f-Cd-0ho">
+                                <rect key="frame" x="8" y="338" width="359" height="30"/>
+                                <color key="backgroundColor" red="0.50980392159999999" green="0.56078431370000004" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Object Detection">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickObjectDetection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N8r-BU-sWk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gTD-CU-h8Y" secondAttribute="trailing" constant="8" id="AVt-iY-jej"/>
+                            <constraint firstItem="B2f-Cd-0ho" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="C0b-Gj-lH8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="leh-vr-WxX" secondAttribute="trailing" constant="8" id="EW2-NX-Av7"/>
                             <constraint firstItem="Rsp-ou-HVt" firstAttribute="top" secondItem="HN3-kW-dOq" secondAttribute="bottom" constant="8" id="F1U-a0-Del"/>
                             <constraint firstItem="leh-vr-WxX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Fd3-Y8-HSd"/>
                             <constraint firstItem="PvI-UG-CmA" firstAttribute="top" secondItem="Rsp-ou-HVt" secondAttribute="bottom" constant="8" id="HqU-8i-bPP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PvI-UG-CmA" secondAttribute="trailing" constant="8" id="InL-Eu-o63"/>
+                            <constraint firstItem="gTD-CU-h8Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="K6c-cb-6Ca"/>
                             <constraint firstItem="HN3-kW-dOq" firstAttribute="top" secondItem="leh-vr-WxX" secondAttribute="bottom" constant="8" id="PIE-s5-B9q"/>
                             <constraint firstItem="PvI-UG-CmA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Vfj-Hb-oAJ"/>
+                            <constraint firstItem="EBs-B6-2Fe" firstAttribute="top" secondItem="gTD-CU-h8Y" secondAttribute="bottom" constant="8" id="Xpr-Wg-tN7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yTt-uy-tet" secondAttribute="trailing" constant="8" id="YEP-Uj-1tW"/>
                             <constraint firstItem="leh-vr-WxX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="bo1-yI-lLD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B2f-Cd-0ho" secondAttribute="trailing" constant="8" id="ccT-0A-JNs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EBs-B6-2Fe" secondAttribute="trailing" constant="8" id="dfQ-NZ-vHh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HN3-kW-dOq" secondAttribute="trailing" constant="8" id="eY6-w2-4KW"/>
+                            <constraint firstItem="yTt-uy-tet" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="ek1-QX-b0y"/>
+                            <constraint firstItem="EBs-B6-2Fe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="g0b-Ed-FFo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rsp-ou-HVt" secondAttribute="trailing" constant="8" id="hHh-6g-4Ph"/>
+                            <constraint firstItem="gTD-CU-h8Y" firstAttribute="top" secondItem="PvI-UG-CmA" secondAttribute="bottom" constant="8" id="nTo-4a-sdd"/>
                             <constraint firstItem="HN3-kW-dOq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="op3-ZE-tch"/>
                             <constraint firstItem="Rsp-ou-HVt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="tIJ-bz-zMv"/>
+                            <constraint firstItem="yTt-uy-tet" firstAttribute="top" secondItem="EBs-B6-2Fe" secondAttribute="bottom" constant="8" id="x8h-x5-zek"/>
+                            <constraint firstItem="B2f-Cd-0ho" firstAttribute="top" secondItem="yTt-uy-tet" secondAttribute="bottom" constant="8" id="zOH-VZ-vSc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -98,7 +150,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PDs-q0-xBb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116.8" y="390.40479760119945"/>
+            <point key="canvasLocation" x="-266" y="95"/>
         </scene>
     </scenes>
 </document>

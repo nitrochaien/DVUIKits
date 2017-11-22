@@ -47,6 +47,7 @@
 		EDA137201FC4818B0050FC9B /* dota2_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EDA136FE1FC4818B0050FC9B /* dota2_logo.png */; };
 		EDA137221FC4818B0050FC9B /* SampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA137001FC4818B0050FC9B /* SampleTableViewController.swift */; };
 		F6AB9A511FC56A5500B6C568 /* MapKit+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AB9A501FC56A5500B6C568 /* MapKit+Ext.swift */; };
+		F6AB9A531FC57ABE00B6C568 /* ObjectDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AB9A521FC57ABE00B6C568 /* ObjectDetectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		EDA136FE1FC4818B0050FC9B /* dota2_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dota2_logo.png; sourceTree = "<group>"; };
 		EDA137001FC4818B0050FC9B /* SampleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTableViewController.swift; sourceTree = "<group>"; };
 		F6AB9A501FC56A5500B6C568 /* MapKit+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapKit+Ext.swift"; sourceTree = "<group>"; };
+		F6AB9A521FC57ABE00B6C568 /* ObjectDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +255,7 @@
 				EDA136E01FC4818A0050FC9B /* Resnet50.mlmodel */,
 				EDA136E11FC4818A0050FC9B /* SqueezeNet.mlmodel */,
 				EDA136E21FC4818A0050FC9B /* TextDetectionViewController.swift */,
+				F6AB9A521FC57ABE00B6C568 /* ObjectDetectionViewController.swift */,
 			);
 			path = ObjectDetection;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				EDA137171FC4818B0050FC9B /* ImageViewController.swift in Sources */,
 				F6AB9A511FC56A5500B6C568 /* MapKit+Ext.swift in Sources */,
 				EDA137181FC4818B0050FC9B /* FacialRecogViewController.swift in Sources */,
+				F6AB9A531FC57ABE00B6C568 /* ObjectDetectionViewController.swift in Sources */,
 				EDA1371E1FC4818B0050FC9B /* PickerCell.swift in Sources */,
 				EDA1371D1FC4818B0050FC9B /* InitialPickerController.swift in Sources */,
 				EDA137051FC4818B0050FC9B /* CameraObjectDetectionViewController.swift in Sources */,

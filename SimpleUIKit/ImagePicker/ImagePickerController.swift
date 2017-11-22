@@ -32,8 +32,24 @@ class ImagePickerController: UIViewController
     {
         super.viewDidLoad()
         configCollectionView()
-        initData()
+        checkPermission()
         initActionBar()
+    }
+    
+    func checkPermission() {
+        let status = PHPhotoLibrary.authorizationStatus()
+        
+        if status == .notDetermined {
+            PHPhotoLibrary.requestAuthorization({ (status) in
+                if status == .authorized {
+                    self.initData()
+                }
+            })
+        } else if status == .authorized {
+            initData()
+        } else if status == .denied {
+            print("Do not have permission!")
+        }
     }
     
     func configCollectionView()

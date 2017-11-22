@@ -42,5 +42,27 @@ class ViewController: UIViewController {
         let controller = SampleTableViewController()
         navigationController?.pushViewController(controller, animated: true)
     }
+    
+    @IBAction func onClickImagePicker(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "ImagePicker", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "ImagePickerController")
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @IBAction func onClickFacialRecognition(_ sender: Any) {
+        let controller = FacialRecogViewController()
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @IBAction func onClickImageWithZoom(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Image", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "ImageViewController")
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @IBAction func onClickObjectDetection(_ sender: Any) {
+        let controller = ObjectDetectionViewController()
+        navigationController?.pushViewController(controller, animated: true)
+    }
 }
 
