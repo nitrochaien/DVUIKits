@@ -46,6 +46,7 @@
 		EDA1371F1FC4818B0050FC9B /* SSFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA136FC1FC4818B0050FC9B /* SSFile.swift */; };
 		EDA137201FC4818B0050FC9B /* dota2_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EDA136FE1FC4818B0050FC9B /* dota2_logo.png */; };
 		EDA137221FC4818B0050FC9B /* SampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA137001FC4818B0050FC9B /* SampleTableViewController.swift */; };
+		F638CB431FC669FF00441E82 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F638CB421FC669FF00441E82 /* BaseViewController.swift */; };
 		F6AB9A511FC56A5500B6C568 /* MapKit+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AB9A501FC56A5500B6C568 /* MapKit+Ext.swift */; };
 		F6AB9A531FC57ABE00B6C568 /* ObjectDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AB9A521FC57ABE00B6C568 /* ObjectDetectionViewController.swift */; };
 /* End PBXBuildFile section */
@@ -115,6 +116,7 @@
 		EDA136FC1FC4818B0050FC9B /* SSFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSFile.swift; sourceTree = "<group>"; };
 		EDA136FE1FC4818B0050FC9B /* dota2_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dota2_logo.png; sourceTree = "<group>"; };
 		EDA137001FC4818B0050FC9B /* SampleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTableViewController.swift; sourceTree = "<group>"; };
+		F638CB421FC669FF00441E82 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F6AB9A501FC56A5500B6C568 /* MapKit+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapKit+Ext.swift"; sourceTree = "<group>"; };
 		F6AB9A521FC57ABE00B6C568 /* ObjectDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -204,6 +206,7 @@
 				EDA136FD1FC4818B0050FC9B /* TableView */,
 				F6AB9A4F1FC56A3800B6C568 /* Utils */,
 				EDA136A81FC4815B0050FC9B /* ViewController.swift */,
+				F638CB421FC669FF00441E82 /* BaseViewController.swift */,
 			);
 			path = SimpleUIKit;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				TargetAttributes = {
 					EDA136A21FC4815B0050FC9B = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					EDA136B61FC4815B0050FC9B = {
@@ -538,6 +542,7 @@
 				EDA137221FC4818B0050FC9B /* SampleTableViewController.swift in Sources */,
 				EDA137121FC4818B0050FC9B /* ScrollableBottomSheetViewController.swift in Sources */,
 				EDA1370C1FC4818B0050FC9B /* TextDetectionViewController.swift in Sources */,
+				F638CB431FC669FF00441E82 /* BaseViewController.swift in Sources */,
 				EDA1370A1FC4818B0050FC9B /* Resnet50.mlmodel in Sources */,
 				EDA137031FC4818B0050FC9B /* HidingNavigationBarManager.swift in Sources */,
 				EDA1371C1FC4818B0050FC9B /* ImagePickerController.swift in Sources */,
@@ -728,13 +733,16 @@
 			baseConfigurationReference = A395BF8F525C1E924FD3EBB3 /* Pods-SimpleUIKit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4D947669QT;
 				INFOPLIST_FILE = SimpleUIKit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = namdv.self.SimpleUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -745,13 +753,15 @@
 			baseConfigurationReference = 2F4D3BC688BB9EC29DC3DC41 /* Pods-SimpleUIKit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4D947669QT;
 				INFOPLIST_FILE = SimpleUIKit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = namdv.self.SimpleUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

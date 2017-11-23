@@ -14,6 +14,7 @@ class InfiniteScrollingViewController: UIViewController {
         super.viewDidLoad()
         
         edgesForExtendedLayout = []
+        title = "Infinite Scrolling"
         
         let width = UIScreen.main.bounds.width
         let height = width * 9 / 16

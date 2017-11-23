@@ -12,9 +12,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         edgesForExtendedLayout = []
+        
+//        navigationController?.navigationBar.prefersLargeTitles = true
+//        navigationItem.largeTitleDisplayMode = .automatic
     }
 
     override func didReceiveMemoryWarning() {
