@@ -32,7 +32,7 @@ import UIKit
 import CoreML
 import Vision
 
-class ImageObjectDetectionViewController: UIViewController {
+class ImageObjectDetectionViewController: BaseViewController {
 
   // MARK: - IBOutlets
   @IBOutlet weak var scene: UIImageView!

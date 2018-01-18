@@ -12,5 +12,10 @@ class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        edgesForExtendedLayout = []
+        view.backgroundColor = .white
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }

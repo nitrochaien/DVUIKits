@@ -12,7 +12,7 @@
 
 import UIKit
 
-class SampleTableViewController: UIViewController {
+class SampleTableViewController: BaseViewController {
     
     var manager: HidingNavigationBarManager!
     

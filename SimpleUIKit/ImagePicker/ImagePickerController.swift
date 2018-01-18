@@ -15,7 +15,7 @@ protocol ImagePickerControllerDelegate
     func onChooseOneFileResult(selectedFile: PHAsset)
 }
 
-class ImagePickerController: UIViewController
+class ImagePickerController: BaseViewController
 {
     @IBOutlet var mCollectionView: UICollectionView!
     let mReuseIdentifier = "PickerCell"

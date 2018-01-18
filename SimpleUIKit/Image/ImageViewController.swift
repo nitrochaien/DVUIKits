@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageViewController: UIViewController
+class ImageViewController: BaseViewController
 {
     @IBOutlet var mScrollView: UIScrollView!
     @IBOutlet var mImageView: UIImageView!
@@ -35,8 +35,6 @@ class ImageViewController: UIViewController
         mScrollView.showsHorizontalScrollIndicator = false
         
         self.view.bringSubview(toFront: mImageView)
-        
-        edgesForExtendedLayout = []
         
         let doubleTap = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap))
         doubleTap.numberOfTapsRequired = 2

@@ -8,15 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        edgesForExtendedLayout = []
-        
-//        navigationController?.navigationBar.prefersLargeTitles = true
-//        navigationItem.largeTitleDisplayMode = .automatic
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,6 +59,16 @@ class ViewController: UIViewController {
     
     @IBAction func onClickObjectDetection(_ sender: Any) {
         let controller = ObjectDetectionViewController()
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @IBAction func onClickNewFeaturesTableView(_ sender: Any) {
+        let controller = NewFeaturesTableViewController()
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @IBAction func onClickTableViewWithSwipeSelection(_ sender: Any) {
+        let controller = SelectableTableViewViewController()
         navigationController?.pushViewController(controller, animated: true)
     }
 }

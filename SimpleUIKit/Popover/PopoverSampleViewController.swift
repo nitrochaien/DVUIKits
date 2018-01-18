@@ -9,7 +9,7 @@
 
 import UIKit
 
-class PopoverSampleViewController: UIViewController {
+class PopoverSampleViewController: BaseViewController {
     
     var popover: Popover!
     

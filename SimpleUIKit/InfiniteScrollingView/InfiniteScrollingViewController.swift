@@ -8,13 +8,13 @@
 
 import UIKit
 
-class InfiniteScrollingViewController: UIViewController {
+class InfiniteScrollingViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        edgesForExtendedLayout = []
+    
         title = "Infinite Scrolling"
+        navigationItem.largeTitleDisplayMode = .never
         
         let width = UIScreen.main.bounds.width
         let height = width * 9 / 16

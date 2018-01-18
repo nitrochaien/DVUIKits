@@ -11,7 +11,7 @@ import MapKit
 
 let kDefaultSpanLevel = 0.01
 
-class MapController: UIViewController
+class MapController: BaseViewController
 {
     @IBOutlet var mMapView: MKMapView!
     @IBOutlet var mSearchBar: UISearchBar!

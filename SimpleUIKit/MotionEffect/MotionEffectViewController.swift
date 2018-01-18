@@ -21,7 +21,7 @@ struct User: Decodable {
     var id: Int
 }
 
-class MotionEffectViewController: UIViewController {
+class MotionEffectViewController: BaseViewController {
     @IBOutlet var background: UIImageView!
     @IBOutlet var logo: UIImageView!
     

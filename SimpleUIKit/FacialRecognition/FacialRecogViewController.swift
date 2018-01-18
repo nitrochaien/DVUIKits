@@ -9,7 +9,7 @@
 import UIKit
 import Vision
 
-class FacialRecogViewController: UIViewController {
+class FacialRecogViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

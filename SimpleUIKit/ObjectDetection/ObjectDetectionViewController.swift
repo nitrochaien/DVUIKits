@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ObjectDetectionViewController: UIViewController {
+class ObjectDetectionViewController: BaseViewController {
     
     var buttonCameraDetection = UIButton()
     var buttonImageDetection = UIButton()
@@ -16,8 +16,6 @@ class ObjectDetectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .white
         
         buttonCameraDetection.translatesAutoresizingMaskIntoConstraints = false
         buttonCameraDetection.setTitle("Camera Detection", for: .normal)

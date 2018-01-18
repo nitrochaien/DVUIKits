@@ -10,7 +10,7 @@ import UIKit
 import AVKit
 import Vision
 
-class CameraObjectDetectionViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
+class CameraObjectDetectionViewController: BaseViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     let label = UILabel()
 
@@ -30,8 +30,6 @@ class CameraObjectDetectionViewController: UIViewController, AVCaptureVideoDataO
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .white
         
         guard let captureDevice = AVCaptureDevice.default(for: .video) else { return }
         guard let input = try? AVCaptureDeviceInput(device: captureDevice) else { return }
