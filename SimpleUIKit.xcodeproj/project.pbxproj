@@ -745,7 +745,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4D947669QT;
 				INFOPLIST_FILE = SimpleUIKit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = namdv.self.SimpleUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -765,7 +765,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4D947669QT;
 				INFOPLIST_FILE = SimpleUIKit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = namdv.self.SimpleUIKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
