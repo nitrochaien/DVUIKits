@@ -25,6 +25,9 @@ class TableViewWithKeyboardViewController: UIViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.largeTitleDisplayMode = .never
+        title = "TableView with Keyboard"
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
@@ -78,13 +81,26 @@ class TableViewWithKeyboardViewController: UIViewController,
         searchBar.becomeFirstResponder()
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchText = searchBar.text else {
+            return
+        }
+        if searchText.isEmpty {
+            return
+        }
+        
+        section3.append(searchText)
+        tableView.reloadData()
+        searchBar.resignFirstResponder()
+    }
+    
     //MARK: Keyboard Observers
     @objc func handleKeyboardWillShow(_ notification: Notification) {
         if let keyboardFrame: NSValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRectangle.height
-            
-            tableViewBottomConstraint.constant = UIScreen.main.bounds.height - keyboardHeight
+
+            tableViewBottomConstraint.constant = keyboardHeight
         } else {
             tableViewBottomConstraint.constant = 0
         }
