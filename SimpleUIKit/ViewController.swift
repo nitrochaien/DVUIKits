@@ -71,5 +71,11 @@ class ViewController: BaseViewController {
         let controller = SelectableTableViewViewController()
         navigationController?.pushViewController(controller, animated: true)
     }
+    
+    @IBAction func onClickTableViewWithKeyboard(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "tableview", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "TableViewWithKeyboardViewController")
+        navigationController?.pushViewController(controller, animated: true)
+    }
 }
 

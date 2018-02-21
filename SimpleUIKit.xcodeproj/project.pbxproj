@@ -51,6 +51,8 @@
 		F6626D762010456F0078B960 /* SelectableTableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6626D752010456F0078B960 /* SelectableTableViewViewController.swift */; };
 		F6AB9A511FC56A5500B6C568 /* MapKit+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AB9A501FC56A5500B6C568 /* MapKit+Ext.swift */; };
 		F6AB9A531FC57ABE00B6C568 /* ObjectDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AB9A521FC57ABE00B6C568 /* ObjectDetectionViewController.swift */; };
+		F6EE23B4203D158B00BD5CFA /* TableViewWithKeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EE23B3203D158B00BD5CFA /* TableViewWithKeyboardViewController.swift */; };
+		F6EE23B6203D15BB00BD5CFA /* tableview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6EE23B5203D15BB00BD5CFA /* tableview.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +125,8 @@
 		F6626D752010456F0078B960 /* SelectableTableViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableTableViewViewController.swift; sourceTree = "<group>"; };
 		F6AB9A501FC56A5500B6C568 /* MapKit+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapKit+Ext.swift"; sourceTree = "<group>"; };
 		F6AB9A521FC57ABE00B6C568 /* ObjectDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetectionViewController.swift; sourceTree = "<group>"; };
+		F6EE23B3203D158B00BD5CFA /* TableViewWithKeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewWithKeyboardViewController.swift; sourceTree = "<group>"; };
+		F6EE23B5203D15BB00BD5CFA /* tableview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = tableview.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,6 +337,8 @@
 				EDA137001FC4818B0050FC9B /* SampleTableViewController.swift */,
 				F65871E81FCE490800C18EAA /* NewFeaturesTableViewController.swift */,
 				F6626D752010456F0078B960 /* SelectableTableViewViewController.swift */,
+				F6EE23B3203D158B00BD5CFA /* TableViewWithKeyboardViewController.swift */,
+				F6EE23B5203D15BB00BD5CFA /* tableview.storyboard */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -460,6 +466,7 @@
 				EDA136B11FC4815B0050FC9B /* LaunchScreen.storyboard in Resources */,
 				EDA137071FC4818B0050FC9B /* ImageDetect.storyboard in Resources */,
 				EDA137131FC4818B0050FC9B /* ScrollableBottomSheetViewController.xib in Resources */,
+				F6EE23B6203D15BB00BD5CFA /* tableview.storyboard in Resources */,
 				EDA137101FC4818B0050FC9B /* map.storyboard in Resources */,
 				EDA136AE1FC4815B0050FC9B /* Assets.xcassets in Resources */,
 				EDA1371B1FC4818B0050FC9B /* ImagePicker.storyboard in Resources */,
@@ -562,6 +569,7 @@
 				EDA137181FC4818B0050FC9B /* FacialRecogViewController.swift in Sources */,
 				F6AB9A531FC57ABE00B6C568 /* ObjectDetectionViewController.swift in Sources */,
 				EDA1371E1FC4818B0050FC9B /* PickerCell.swift in Sources */,
+				F6EE23B4203D158B00BD5CFA /* TableViewWithKeyboardViewController.swift in Sources */,
 				EDA1371D1FC4818B0050FC9B /* InitialPickerController.swift in Sources */,
 				EDA137051FC4818B0050FC9B /* CameraObjectDetectionViewController.swift in Sources */,
 				EDA1371F1FC4818B0050FC9B /* SSFile.swift in Sources */,

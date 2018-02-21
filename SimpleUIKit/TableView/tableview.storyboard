@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Table View With Keyboard View Controller-->
+        <scene sceneID="YE4-JM-bLz">
+            <objects>
+                <viewController storyboardIdentifier="TableViewWithKeyboardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WA5-mr-Lw8" customClass="TableViewWithKeyboardViewController" customModule="SimpleUIKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="etk-lc-VU6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="14V-zJ-hRd">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="HeN-iN-Wsv">
+                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8uP-tc-J1f">
+                                    <rect key="frame" x="0.0" y="117.5" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="Button">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Pqr-PG-is1">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pqr-PG-is1" id="axa-Fu-jTJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qoA-FZ-07g" firstAttribute="trailing" secondItem="HeN-iN-Wsv" secondAttribute="trailing" id="3Qy-0t-2Vp"/>
+                            <constraint firstItem="14V-zJ-hRd" firstAttribute="leading" secondItem="qoA-FZ-07g" secondAttribute="leading" id="5v0-rE-dPH"/>
+                            <constraint firstItem="14V-zJ-hRd" firstAttribute="top" secondItem="qoA-FZ-07g" secondAttribute="top" id="9LX-Kx-WKE"/>
+                            <constraint firstItem="qoA-FZ-07g" firstAttribute="bottom" secondItem="HeN-iN-Wsv" secondAttribute="bottom" id="NQ0-ej-0X9"/>
+                            <constraint firstItem="14V-zJ-hRd" firstAttribute="trailing" secondItem="qoA-FZ-07g" secondAttribute="trailing" id="lpw-VG-RNo"/>
+                            <constraint firstItem="HeN-iN-Wsv" firstAttribute="leading" secondItem="qoA-FZ-07g" secondAttribute="leading" id="pCx-Wj-PDb"/>
+                            <constraint firstItem="HeN-iN-Wsv" firstAttribute="top" secondItem="14V-zJ-hRd" secondAttribute="bottom" id="zXw-ZC-ZhA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qoA-FZ-07g"/>
+                    </view>
+                    <connections>
+                        <outlet property="footerButton" destination="8uP-tc-J1f" id="UwL-Ju-auf"/>
+                        <outlet property="searchBar" destination="14V-zJ-hRd" id="1ly-2z-pXd"/>
+                        <outlet property="tableView" destination="HeN-iN-Wsv" id="lqq-dx-Lp4"/>
+                        <outlet property="tableViewBottomConstraint" destination="NQ0-ej-0X9" id="Bqd-x6-9LO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r0j-kL-7CR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="dRg-KQ-swr">
+                    <rect key="frame" x="0.0" y="0.0" width="425" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <viewLayoutGuide key="safeArea" id="zAM-gE-jfr"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="-74.400000000000006" y="-91.304347826086968"/>
+        </scene>
+    </scenes>
+</document>
