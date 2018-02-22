@@ -10,29 +10,48 @@ import UIKit
 
 class TableViewWithKeyboardViewController: UIViewController,
     UITableViewDelegate, UITableViewDataSource,
-    UISearchBarDelegate {
+    UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout,
+    UITextFieldDelegate {
     
-    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var footerButton: UIButton!
     @IBOutlet weak var tableViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var searchView: UIView!
+    @IBOutlet weak var searchSelectionCV: UICollectionView!
+    @IBOutlet weak var firstTextField: UITextField!
     
-    let sectionNames = ["Artists", "Footballers", "Search Input"]
+    let sectionNames = ["Artists", "Footballers", "Movie-stars"]
     let section1 = ["Ed Sheeran", "Taylor Swift", "ABBA", "Modern Talking", "Demi Lovato", "Miley Cyrus"]
     let section2 = ["Eden Hazard", "Ronaldo", "Messi"]
-    var section3: [String] = []
+    var section3: [String] = ["The Rock", "Brad Pitt", "Julia Roberts"]
+    var selectedItems: [String] = []
+    
+    var tfWidthConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.largeTitleDisplayMode = .never
         title = "TableView with Keyboard"
+        edgesForExtendedLayout = []
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
         
-        searchBar.delegate = self
+        searchView.layer.cornerRadius = 10
+        
+        searchSelectionCV.delegate = self
+        searchSelectionCV.dataSource = self
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.sectionFootersPinToVisibleBounds = true
+        flowLayout.minimumInteritemSpacing = 5
+        flowLayout.minimumLineSpacing = 5
+        flowLayout.footerReferenceSize = CGSize.zero
+        searchSelectionCV.collectionViewLayout = flowLayout
+        
+        firstTextField.delegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillShow), name: Notification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
@@ -43,9 +62,10 @@ class TableViewWithKeyboardViewController: UIViewController,
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    //MARK: TableView DataSource
+    //MARK: UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        cell.selectionStyle = .none
         
         if indexPath.section == 0 {
             cell.textLabel?.text = section1[indexPath.row]
@@ -76,22 +96,27 @@ class TableViewWithKeyboardViewController: UIViewController,
         return sectionNames[section]
     }
     
-    //MARK: Search Bar Delegate
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        searchBar.becomeFirstResponder()
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var item = ""
+        if indexPath.section == 0 {
+            item = section1[indexPath.row]
+        } else if indexPath.section == 1 {
+            item = section2[indexPath.row]
+        } else {
+            item = section3[indexPath.row]
+        }
+        selectedItems.append(item)
+        reloadSearchView(.right, indexPath: indexPath)
     }
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchText = searchBar.text else {
-            return
-        }
-        if searchText.isEmpty {
-            return
-        }
+    //MARK: Text Field Delegate
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
         
-        section3.append(searchText)
-        tableView.reloadData()
-        searchBar.resignFirstResponder()
+        return true
     }
     
     //MARK: Keyboard Observers
@@ -108,5 +133,44 @@ class TableViewWithKeyboardViewController: UIViewController,
     
     @objc func handleKeyboardWillHide(_ notification: Notification) {
         tableViewBottomConstraint.constant = 0
+    }
+    
+    //MARK: UICollectionView
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return selectedItems.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "selectedCell", for: indexPath)
+        cell.contentView.translatesAutoresizingMaskIntoConstraints = false
+        
+        if let label = cell.viewWithTag(1) as? UILabel {
+            label.text = selectedItems[indexPath.row]
+            label.sizeToFit()
+        }
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedItems.remove(at: indexPath.row)
+        reloadSearchView(.left, indexPath: indexPath)
+    }
+    
+    //MARK: UICollectionView funcs
+    func reloadSearchView(_ direction: UICollectionViewScrollPosition, indexPath: IndexPath) {
+        if selectedItems.count > 0 {
+            
+        } else {
+            
+        }
+        searchSelectionCV.reloadData()
+        
+        if searchSelectionCV.contentSize.width > searchSelectionCV.bounds.width {
+            DispatchQueue.main.async {
+                self.searchSelectionCV.scrollToItem(at: IndexPath(item: self.selectedItems.count - 1, section: 0), at: direction, animated: false)
+            }
+            
+        }
     }
 }
