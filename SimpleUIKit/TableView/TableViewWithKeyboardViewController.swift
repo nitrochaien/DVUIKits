@@ -18,6 +18,7 @@ class TableViewWithKeyboardViewController: UIViewController,
     @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var searchSelectionCV: UICollectionView!
     @IBOutlet weak var firstTextField: UITextField!
+    @IBOutlet weak var secondTextField: UITextField!
     
     let sectionNames = ["Artists", "Footballers", "Movie-stars"]
     let section1 = ["Ed Sheeran", "Taylor Swift", "ABBA", "Modern Talking", "Demi Lovato", "Miley Cyrus"]
@@ -25,7 +26,7 @@ class TableViewWithKeyboardViewController: UIViewController,
     var section3: [String] = ["The Rock", "Brad Pitt", "Julia Roberts"]
     var selectedItems: [String] = []
     
-    var tfWidthConstraint: NSLayoutConstraint!
+    var tfWidthConstraint = NSLayoutConstraint()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +53,7 @@ class TableViewWithKeyboardViewController: UIViewController,
         searchSelectionCV.collectionViewLayout = flowLayout
         
         firstTextField.delegate = self
+        secondTextField.delegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillShow), name: Notification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
@@ -105,8 +107,8 @@ class TableViewWithKeyboardViewController: UIViewController,
         } else {
             item = section3[indexPath.row]
         }
-        selectedItems.append(item)
-        reloadSearchView(.right, indexPath: indexPath)
+        append(item)
+        reloadSearchView(.right)
     }
     
     //MARK: Text Field Delegate
@@ -115,6 +117,14 @@ class TableViewWithKeyboardViewController: UIViewController,
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        
+        guard let enteredText = textField.text else {
+            return true
+        }
+        append(enteredText)
+        reloadSearchView(.right)
+        
+        textField.text = nil
         
         return true
     }
@@ -154,23 +164,44 @@ class TableViewWithKeyboardViewController: UIViewController,
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedItems.remove(at: indexPath.row)
-        reloadSearchView(.left, indexPath: indexPath)
+        reloadSearchView(.left)
     }
     
     //MARK: UICollectionView funcs
-    func reloadSearchView(_ direction: UICollectionViewScrollPosition, indexPath: IndexPath) {
-        if selectedItems.count > 0 {
-            
+    func reloadSearchView(_ direction: UICollectionViewScrollPosition) {
+        if self.selectedItems.count > 0 {
+            firstTextField.isHidden = false
+            firstTextField.isUserInteractionEnabled = true
+            secondTextField.isHidden = true
+            secondTextField.isUserInteractionEnabled = false
+            view.sendSubview(toBack: secondTextField)
         } else {
-            
+            firstTextField.isHidden = true
+            firstTextField.isUserInteractionEnabled = false
+            secondTextField.isHidden = false
+            secondTextField.isUserInteractionEnabled = true
+            view.bringSubview(toFront: secondTextField)
         }
-        searchSelectionCV.reloadData()
+        self.searchSelectionCV.reloadData()
         
-        if searchSelectionCV.contentSize.width > searchSelectionCV.bounds.width {
+        if self.searchSelectionCV.contentSize.width > self.searchSelectionCV.bounds.width {
             DispatchQueue.main.async {
                 self.searchSelectionCV.scrollToItem(at: IndexPath(item: self.selectedItems.count - 1, section: 0), at: direction, animated: false)
             }
-            
         }
+    }
+    
+    func append(_ item: String) {
+        if selectedItems.contains(item) {
+            if let itemIndex = selectedItems.index(of: item) {
+                selectedItems.remove(at: itemIndex)
+            }
+        }
+        selectedItems.append(item)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
     }
 }
