@@ -46,8 +46,14 @@
 		EDA1371F1FC4818B0050FC9B /* SSFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA136FC1FC4818B0050FC9B /* SSFile.swift */; };
 		EDA137201FC4818B0050FC9B /* dota2_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EDA136FE1FC4818B0050FC9B /* dota2_logo.png */; };
 		EDA137221FC4818B0050FC9B /* SampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA137001FC4818B0050FC9B /* SampleTableViewController.swift */; };
+		F63865BF207B1BD700BA6418 /* UICollectionViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63865BE207B1BD700BA6418 /* UICollectionViewController+Ext.swift */; };
+		F63865C4207B49CD00BA6418 /* DropAndDragCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63865C2207B49CD00BA6418 /* DropAndDragCell.swift */; };
+		F63865C5207B49CD00BA6418 /* DropAndDragCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F63865C3207B49CD00BA6418 /* DropAndDragCell.xib */; };
+		F63865C7207B4F7700BA6418 /* ReorderCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63865C6207B4F7700BA6418 /* ReorderCollectionViewController.swift */; };
 		F638CB431FC669FF00441E82 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F638CB421FC669FF00441E82 /* BaseViewController.swift */; };
 		F65871E91FCE490800C18EAA /* NewFeaturesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65871E81FCE490800C18EAA /* NewFeaturesTableViewController.swift */; };
+		F65CDF56207873930068F1A0 /* DragAndDropFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65CDF55207873930068F1A0 /* DragAndDropFlowLayout.swift */; };
+		F65CDF58207873D70068F1A0 /* DragAndDropCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F65CDF57207873D70068F1A0 /* DragAndDropCollectionViewController.swift */; };
 		F6626D762010456F0078B960 /* SelectableTableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6626D752010456F0078B960 /* SelectableTableViewViewController.swift */; };
 		F6AB9A511FC56A5500B6C568 /* MapKit+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AB9A501FC56A5500B6C568 /* MapKit+Ext.swift */; };
 		F6AB9A531FC57ABE00B6C568 /* ObjectDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AB9A521FC57ABE00B6C568 /* ObjectDetectionViewController.swift */; };
@@ -120,8 +126,14 @@
 		EDA136FC1FC4818B0050FC9B /* SSFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSFile.swift; sourceTree = "<group>"; };
 		EDA136FE1FC4818B0050FC9B /* dota2_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dota2_logo.png; sourceTree = "<group>"; };
 		EDA137001FC4818B0050FC9B /* SampleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTableViewController.swift; sourceTree = "<group>"; };
+		F63865BE207B1BD700BA6418 /* UICollectionViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewController+Ext.swift"; sourceTree = "<group>"; };
+		F63865C2207B49CD00BA6418 /* DropAndDragCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropAndDragCell.swift; sourceTree = "<group>"; };
+		F63865C3207B49CD00BA6418 /* DropAndDragCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropAndDragCell.xib; sourceTree = "<group>"; };
+		F63865C6207B4F7700BA6418 /* ReorderCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCollectionViewController.swift; sourceTree = "<group>"; };
 		F638CB421FC669FF00441E82 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F65871E81FCE490800C18EAA /* NewFeaturesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeaturesTableViewController.swift; sourceTree = "<group>"; };
+		F65CDF55207873930068F1A0 /* DragAndDropFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragAndDropFlowLayout.swift; sourceTree = "<group>"; };
+		F65CDF57207873D70068F1A0 /* DragAndDropCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAndDropCollectionViewController.swift; sourceTree = "<group>"; };
 		F6626D752010456F0078B960 /* SelectableTableViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableTableViewViewController.swift; sourceTree = "<group>"; };
 		F6AB9A501FC56A5500B6C568 /* MapKit+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapKit+Ext.swift"; sourceTree = "<group>"; };
 		F6AB9A521FC57ABE00B6C568 /* ObjectDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetectionViewController.swift; sourceTree = "<group>"; };
@@ -339,6 +351,10 @@
 				F6626D752010456F0078B960 /* SelectableTableViewViewController.swift */,
 				F6EE23B3203D158B00BD5CFA /* TableViewWithKeyboardViewController.swift */,
 				F6EE23B5203D15BB00BD5CFA /* tableview.storyboard */,
+				F65CDF57207873D70068F1A0 /* DragAndDropCollectionViewController.swift */,
+				F63865C2207B49CD00BA6418 /* DropAndDragCell.swift */,
+				F63865C3207B49CD00BA6418 /* DropAndDragCell.xib */,
+				F63865C6207B4F7700BA6418 /* ReorderCollectionViewController.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -346,7 +362,9 @@
 		F6AB9A4F1FC56A3800B6C568 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				F65CDF55207873930068F1A0 /* DragAndDropFlowLayout.swift */,
 				F6AB9A501FC56A5500B6C568 /* MapKit+Ext.swift */,
+				F63865BE207B1BD700BA6418 /* UICollectionViewController+Ext.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -467,6 +485,7 @@
 				EDA137071FC4818B0050FC9B /* ImageDetect.storyboard in Resources */,
 				EDA137131FC4818B0050FC9B /* ScrollableBottomSheetViewController.xib in Resources */,
 				F6EE23B6203D15BB00BD5CFA /* tableview.storyboard in Resources */,
+				F63865C5207B49CD00BA6418 /* DropAndDragCell.xib in Resources */,
 				EDA137101FC4818B0050FC9B /* map.storyboard in Resources */,
 				EDA136AE1FC4815B0050FC9B /* Assets.xcassets in Resources */,
 				EDA1371B1FC4818B0050FC9B /* ImagePicker.storyboard in Resources */,
@@ -562,18 +581,23 @@
 				EDA136A91FC4815B0050FC9B /* ViewController.swift in Sources */,
 				F65871E91FCE490800C18EAA /* NewFeaturesTableViewController.swift in Sources */,
 				EDA137191FC4818B0050FC9B /* MotionEffectViewController.swift in Sources */,
+				F63865BF207B1BD700BA6418 /* UICollectionViewController+Ext.swift in Sources */,
 				EDA137061FC4818B0050FC9B /* GoogLeNetPlaces.mlmodel in Sources */,
 				EDA1370F1FC4818B0050FC9B /* BottomSheetViewController.swift in Sources */,
+				F65CDF56207873930068F1A0 /* DragAndDropFlowLayout.swift in Sources */,
 				EDA137171FC4818B0050FC9B /* ImageViewController.swift in Sources */,
 				F6AB9A511FC56A5500B6C568 /* MapKit+Ext.swift in Sources */,
 				EDA137181FC4818B0050FC9B /* FacialRecogViewController.swift in Sources */,
 				F6AB9A531FC57ABE00B6C568 /* ObjectDetectionViewController.swift in Sources */,
+				F63865C7207B4F7700BA6418 /* ReorderCollectionViewController.swift in Sources */,
 				EDA1371E1FC4818B0050FC9B /* PickerCell.swift in Sources */,
 				F6EE23B4203D158B00BD5CFA /* TableViewWithKeyboardViewController.swift in Sources */,
+				F65CDF58207873D70068F1A0 /* DragAndDropCollectionViewController.swift in Sources */,
 				EDA1371D1FC4818B0050FC9B /* InitialPickerController.swift in Sources */,
 				EDA137051FC4818B0050FC9B /* CameraObjectDetectionViewController.swift in Sources */,
 				EDA1371F1FC4818B0050FC9B /* SSFile.swift in Sources */,
 				EDA137011FC4818B0050FC9B /* Popover.swift in Sources */,
+				F63865C4207B49CD00BA6418 /* DropAndDragCell.swift in Sources */,
 				EDA1370B1FC4818B0050FC9B /* SqueezeNet.mlmodel in Sources */,
 				F6626D762010456F0078B960 /* SelectableTableViewViewController.swift in Sources */,
 				EDA137091FC4818B0050FC9B /* MobileNet.mlmodel in Sources */,

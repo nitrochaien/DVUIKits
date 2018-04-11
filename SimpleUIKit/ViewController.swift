@@ -77,5 +77,15 @@ class ViewController: BaseViewController {
         let controller = storyboard.instantiateViewController(withIdentifier: "TableViewWithKeyboardViewController")
         navigationController?.pushViewController(controller, animated: true)
     }
+    
+    @IBAction func onClickDragAndDrop(_ sender: Any) {
+        let controller = DragAndDropCollectionViewController()
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @IBAction func onClickReorder(_ sender: Any) {
+        let controller = ReorderCollectionViewController()
+        navigationController?.pushViewController(controller, animated: true)
+    }
 }
 

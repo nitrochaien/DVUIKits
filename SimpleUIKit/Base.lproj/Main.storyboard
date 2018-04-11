@@ -128,11 +128,32 @@
                                     <action selector="onClickTableViewWithKeyboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ybc-ui-iDq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Trb-38-46i">
+                                <rect key="frame" x="8" y="490" width="359" height="30"/>
+                                <color key="backgroundColor" red="0.50980392159999999" green="0.56078431370000004" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Drag and Drop Collection View">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickDragAndDrop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n61-eS-yNH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGw-Kw-d7w">
+                                <rect key="frame" x="8" y="528" width="359" height="30"/>
+                                <color key="backgroundColor" red="0.50980392159999999" green="0.56078431370000004" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Reorder Collection View">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickReorder:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fYb-bi-1zn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Y22-w0-bNT" firstAttribute="leading" secondItem="qMo-gW-5Jq" secondAttribute="leading" id="2sh-lC-OZF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gTD-CU-h8Y" secondAttribute="trailing" constant="8" id="AVt-iY-jej"/>
+                            <constraint firstItem="KGw-Kw-d7w" firstAttribute="leading" secondItem="Trb-38-46i" secondAttribute="leading" id="Aj9-Zc-sA7"/>
                             <constraint firstItem="B2f-Cd-0ho" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="C0b-Gj-lH8"/>
                             <constraint firstItem="F7h-eF-wim" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="DGo-uX-t9y"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="leh-vr-WxX" secondAttribute="trailing" constant="8" id="EW2-NX-Av7"/>
@@ -143,10 +164,12 @@
                             <constraint firstItem="PvI-UG-CmA" firstAttribute="top" secondItem="Rsp-ou-HVt" secondAttribute="bottom" constant="8" id="HqU-8i-bPP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PvI-UG-CmA" secondAttribute="trailing" constant="8" id="InL-Eu-o63"/>
                             <constraint firstItem="gTD-CU-h8Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="K6c-cb-6Ca"/>
+                            <constraint firstItem="KGw-Kw-d7w" firstAttribute="trailing" secondItem="Trb-38-46i" secondAttribute="trailing" id="KAb-tq-Hdi"/>
                             <constraint firstItem="F7h-eF-wim" firstAttribute="top" secondItem="B2f-Cd-0ho" secondAttribute="bottom" constant="8" id="L7n-rs-DlA"/>
                             <constraint firstItem="Y22-w0-bNT" firstAttribute="trailing" secondItem="qMo-gW-5Jq" secondAttribute="trailing" id="OM2-z3-6Gc"/>
                             <constraint firstItem="HN3-kW-dOq" firstAttribute="top" secondItem="leh-vr-WxX" secondAttribute="bottom" constant="8" id="PIE-s5-B9q"/>
                             <constraint firstItem="PvI-UG-CmA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Vfj-Hb-oAJ"/>
+                            <constraint firstItem="Trb-38-46i" firstAttribute="leading" secondItem="Y22-w0-bNT" secondAttribute="leading" id="Wia-NT-giP"/>
                             <constraint firstItem="EBs-B6-2Fe" firstAttribute="top" secondItem="gTD-CU-h8Y" secondAttribute="bottom" constant="8" id="Xpr-Wg-tN7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yTt-uy-tet" secondAttribute="trailing" constant="8" id="YEP-Uj-1tW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qMo-gW-5Jq" secondAttribute="trailing" constant="8" id="Ya2-63-hlU"/>
@@ -157,12 +180,15 @@
                             <constraint firstItem="yTt-uy-tet" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="ek1-QX-b0y"/>
                             <constraint firstItem="EBs-B6-2Fe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="g0b-Ed-FFo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rsp-ou-HVt" secondAttribute="trailing" constant="8" id="hHh-6g-4Ph"/>
+                            <constraint firstItem="KGw-Kw-d7w" firstAttribute="top" secondItem="Trb-38-46i" secondAttribute="bottom" constant="8" id="lbP-sa-rAH"/>
                             <constraint firstItem="gTD-CU-h8Y" firstAttribute="top" secondItem="PvI-UG-CmA" secondAttribute="bottom" constant="8" id="nTo-4a-sdd"/>
                             <constraint firstItem="HN3-kW-dOq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="op3-ZE-tch"/>
+                            <constraint firstItem="Trb-38-46i" firstAttribute="top" secondItem="Y22-w0-bNT" secondAttribute="bottom" constant="8" id="osh-B7-2kC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F7h-eF-wim" secondAttribute="trailing" constant="8" id="rtC-fA-GxH"/>
                             <constraint firstItem="Rsp-ou-HVt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="tIJ-bz-zMv"/>
                             <constraint firstItem="qMo-gW-5Jq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="uTk-M2-1aR"/>
                             <constraint firstItem="yTt-uy-tet" firstAttribute="top" secondItem="EBs-B6-2Fe" secondAttribute="bottom" constant="8" id="x8h-x5-zek"/>
+                            <constraint firstItem="Trb-38-46i" firstAttribute="trailing" secondItem="Y22-w0-bNT" secondAttribute="trailing" id="ytr-IU-Zex"/>
                             <constraint firstItem="B2f-Cd-0ho" firstAttribute="top" secondItem="yTt-uy-tet" secondAttribute="bottom" constant="8" id="zOH-VZ-vSc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
