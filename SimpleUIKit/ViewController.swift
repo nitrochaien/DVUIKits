@@ -79,7 +79,8 @@ class ViewController: BaseViewController {
     }
     
     @IBAction func onClickDragAndDrop(_ sender: Any) {
-        let controller = DragAndDropCollectionViewController()
+        let storyboard = UIStoryboard(name: "tableview", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "DropAndDragViewController")
         navigationController?.pushViewController(controller, animated: true)
     }
     
