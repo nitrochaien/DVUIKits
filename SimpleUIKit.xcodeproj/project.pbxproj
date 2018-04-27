@@ -46,6 +46,7 @@
 		EDA1371F1FC4818B0050FC9B /* SSFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA136FC1FC4818B0050FC9B /* SSFile.swift */; };
 		EDA137201FC4818B0050FC9B /* dota2_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = EDA136FE1FC4818B0050FC9B /* dota2_logo.png */; };
 		EDA137221FC4818B0050FC9B /* SampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA137001FC4818B0050FC9B /* SampleTableViewController.swift */; };
+		F60960512089920E003010AA /* LauchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60960502089920E003010AA /* LauchViewController.swift */; };
 		F63865C4207B49CD00BA6418 /* DropAndDragCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63865C2207B49CD00BA6418 /* DropAndDragCell.swift */; };
 		F63865C5207B49CD00BA6418 /* DropAndDragCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F63865C3207B49CD00BA6418 /* DropAndDragCell.xib */; };
 		F63865C7207B4F7700BA6418 /* ReorderCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63865C6207B4F7700BA6418 /* ReorderCollectionViewController.swift */; };
@@ -125,6 +126,7 @@
 		EDA136FC1FC4818B0050FC9B /* SSFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSFile.swift; sourceTree = "<group>"; };
 		EDA136FE1FC4818B0050FC9B /* dota2_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dota2_logo.png; sourceTree = "<group>"; };
 		EDA137001FC4818B0050FC9B /* SampleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleTableViewController.swift; sourceTree = "<group>"; };
+		F60960502089920E003010AA /* LauchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauchViewController.swift; sourceTree = "<group>"; };
 		F63865C2207B49CD00BA6418 /* DropAndDragCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropAndDragCell.swift; sourceTree = "<group>"; };
 		F63865C3207B49CD00BA6418 /* DropAndDragCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropAndDragCell.xib; sourceTree = "<group>"; };
 		F63865C6207B4F7700BA6418 /* ReorderCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderCollectionViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				F6AB9A4F1FC56A3800B6C568 /* Utils */,
 				EDA136A81FC4815B0050FC9B /* ViewController.swift */,
 				F638CB421FC669FF00441E82 /* BaseViewController.swift */,
+				F60960502089920E003010AA /* LauchViewController.swift */,
 			);
 			path = SimpleUIKit;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				F65CDF56207873930068F1A0 /* DragAndDropFlowLayout.swift in Sources */,
 				EDA137171FC4818B0050FC9B /* ImageViewController.swift in Sources */,
 				F6AB9A511FC56A5500B6C568 /* MapKit+Ext.swift in Sources */,
+				F60960512089920E003010AA /* LauchViewController.swift in Sources */,
 				EDA137181FC4818B0050FC9B /* FacialRecogViewController.swift in Sources */,
 				F6AB9A531FC57ABE00B6C568 /* ObjectDetectionViewController.swift in Sources */,
 				F63865C7207B4F7700BA6418 /* ReorderCollectionViewController.swift in Sources */,
